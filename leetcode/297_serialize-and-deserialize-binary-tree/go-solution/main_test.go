@@ -1,0 +1,59 @@
+package go_solution
+
+import "testing"
+
+func TestSerialize(t *testing.T) {
+	/*
+	     1
+	    / \
+	   2   3
+	      / \
+	     4   5
+	*/
+	var testData = []struct {
+		Root       *TreeNode
+		Serialized string
+	} {
+		{
+			Root: &TreeNode{
+				Val:  1,
+				Left: &TreeNode{Val: 2},
+				Right: &TreeNode{
+					Val: 3,
+					Left: &TreeNode{
+						Val: 4,
+					},
+					Right: &TreeNode{
+						Val: 5,
+					},
+				},
+			},
+			Serialized: "[1,2,null,null,3,4,null,null,5,null,null]",
+		},
+	}
+
+	for _, data := range testData {
+		res := serialize(data.Root)
+		want := data.Serialized
+		if res != want {
+			t.Errorf("serialize return %s, want %s", res, want)
+		}
+	}
+
+}
+
+func TestDeserialize(t *testing.T) {
+	data := []string{
+		"[1,2,null,null,3,4,null,null,5,null,null]",
+		"[3,9,20,null,null,15,7,null,null,null,null]",
+		"[]",
+	}
+
+	for _, s := range data {
+		d := deserialize(s)
+		ss := serialize(d)
+		if ss != s {
+			t.Errorf("don't match, serialize return %s, want %s", ss, s)
+		}
+	}
+}
