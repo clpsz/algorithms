@@ -6,15 +6,11 @@ import (
 )
 
 func TestMergeTrees(t *testing.T) {
-	data1 := "[1,3,5,null,null,null,2,null,null]"
+	data1 := "[4,2,1,null,null,3,null,null,7,null,null]"
 	tree1 := commons.Deserialize(data1)
-	data2 := "[2,1,null,4,null,null,3,null,null]"
-	tree2 := commons.Deserialize(data2)
-	tree3 := mergeTrees(tree1, tree2)
-	want := "[3,4,5,null,null,4,null,null,5,null,null]"
-
-	data3 := commons.Serialize(tree3)
-	if data3 != want {
-		t.Errorf("get %s, want %s", data3, want)
+	res := commons.Serialize(searchBST(tree1, 2))
+	want := "[2,1,null,null,3,null,null]"
+	if res != want {
+		t.Errorf("get %s, want %s", res, want)
 	}
 }

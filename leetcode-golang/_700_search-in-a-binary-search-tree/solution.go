@@ -2,15 +2,25 @@ package _700_search_in_a_binary_search_tree
 
 import "leetcode-golang/commons"
 
-func mergeTrees(t1 *commons.TreeNode, t2 *commons.TreeNode) *commons.TreeNode {
-	if t1 == nil {
-		return t2
+/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+func searchBST(root *commons.TreeNode, val int) *commons.TreeNode {
+	if root == nil {
+		return nil
 	}
-	if t2 == nil {
-		return t1
+
+	if root.Val == val {
+		return root
 	}
-	res := commons.TreeNode{Val: t1.Val+t2.Val}
-	res.Left = mergeTrees(t1.Left, t2.Left)
-	res.Right = mergeTrees(t1.Right, t2.Right)
-	return &res
+	if val > root.Val {
+		return searchBST(root.Right, val)
+	} else {
+		return searchBST(root.Left, val)
+	}
 }
