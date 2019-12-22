@@ -1,14 +1,15 @@
-package go_solution
+package _938_range_sum_of_bst
 
 import (
+	"leetcode-golang/commons"
 	"strconv"
 	"strings"
 	"testing"
 )
 
-func deserialize(data string) *TreeNode {
-	var helper func(data1 []string) (*TreeNode, []string)
-	helper = func(data1 []string) (*TreeNode, []string) {
+func deserialize(data string) *commons.TreeNode {
+	var helper func(data1 []string) (*commons.TreeNode, []string)
+	helper = func(data1 []string) (*commons.TreeNode, []string) {
 		nodeStr := data1[0]
 		data1 = data1[1:]
 
@@ -16,7 +17,7 @@ func deserialize(data string) *TreeNode {
 			return nil, data1
 		}
 		val, _ := strconv.Atoi(nodeStr)
-		node := TreeNode{Val: val}
+		node := commons.TreeNode{Val: val}
 		node.Left, data1 = helper(data1)
 		node.Right, data1 = helper(data1)
 		return &node, data1

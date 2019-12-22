@@ -1,6 +1,9 @@
-package go_solution
+package _297_serialize_and_deserialize_binary_tree
 
-import "testing"
+import (
+	"leetcode-golang/commons"
+	"testing"
+)
 
 func TestSerialize(t *testing.T) {
 	/*
@@ -11,19 +14,19 @@ func TestSerialize(t *testing.T) {
 	     4   5
 	*/
 	var testData = []struct {
-		Root       *TreeNode
+		Root       *commons.TreeNode
 		Serialized string
-	} {
+	}{
 		{
-			Root: &TreeNode{
+			Root: &commons.TreeNode{
 				Val:  1,
-				Left: &TreeNode{Val: 2},
-				Right: &TreeNode{
+				Left: &commons.TreeNode{Val: 2},
+				Right: &commons.TreeNode{
 					Val: 3,
-					Left: &TreeNode{
+					Left: &commons.TreeNode{
 						Val: 4,
 					},
-					Right: &TreeNode{
+					Right: &commons.TreeNode{
 						Val: 5,
 					},
 				},
@@ -33,7 +36,7 @@ func TestSerialize(t *testing.T) {
 	}
 
 	for _, data := range testData {
-		res := serialize(data.Root)
+		res := commons.Serialize(data.Root)
 		want := data.Serialized
 		if res != want {
 			t.Errorf("serialize return %s, want %s", res, want)
@@ -50,8 +53,8 @@ func TestDeserialize(t *testing.T) {
 	}
 
 	for _, s := range data {
-		d := deserialize(s)
-		ss := serialize(d)
+		d := commons.Deserialize(s)
+		ss := commons.Serialize(d)
 		if ss != s {
 			t.Errorf("don't match, serialize return %s, want %s", ss, s)
 		}

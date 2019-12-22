@@ -1,4 +1,4 @@
-package go_solution
+package commons
 
 import (
 	"strconv"
@@ -11,7 +11,7 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
-func serialize(root *TreeNode) string {
+func Serialize(root *TreeNode) string {
 	result := make([]string, 0)
 
 	var helper func(root1 *TreeNode)
@@ -33,7 +33,7 @@ func serialize(root *TreeNode) string {
 	return "[" + strings.Join(result, ",") + "]"
 }
 
-func deserialize(data string) *TreeNode {
+func Deserialize(data string) *TreeNode {
 	var helper func(data1 []string) (*TreeNode, []string)
 	helper = func(data1 []string) (*TreeNode, []string) {
 		nodeStr := data1[0]

@@ -1,14 +1,11 @@
-package go_solution
+package _938_range_sum_of_bst
 
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
+import "leetcode-golang/commons"
 
-func rangeSumBST(root *TreeNode, L int, R int) int {
-	var helper func (root1 *TreeNode) int
-	helper = func(root1 *TreeNode) int {
+
+func rangeSumBST(root *commons.TreeNode, L int, R int) int {
+	var helper func (root1 *commons.TreeNode) int
+	helper = func(root1 *commons.TreeNode) int {
 		if root1 == nil { return 0}
 		sum := 0
 		if root1.Val >= L && root1.Val <= R {
