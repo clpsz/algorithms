@@ -1,6 +1,8 @@
 package _102_binary_tree_level_order_traversal
 
-import "leetcode-golang/commons"
+import (
+	"leetcode-golang/commons"
+)
 
 func levelOrderUseQueue(root *commons.TreeNode) [][]int {
 	if root == nil {

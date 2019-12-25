@@ -1,6 +1,8 @@
 package _108_convert_sorted_array_to_binary_search_tree
 
-import "leetcode-golang/commons"
+import (
+	"leetcode-golang/commons"
+)
 
 /**
  * Definition for a binary tree node.

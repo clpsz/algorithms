@@ -1,6 +1,8 @@
 package _617_merge_two_binary_trees
 
-import "leetcode-golang/commons"
+import (
+	"leetcode-golang/commons"
+)
 
 func mergeTrees(t1 *commons.TreeNode, t2 *commons.TreeNode) *commons.TreeNode {
 	if t1 == nil {

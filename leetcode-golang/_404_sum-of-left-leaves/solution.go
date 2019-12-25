@@ -1,6 +1,8 @@
 package _404_sum_of_left_leaves
 
-import "leetcode-golang/commons"
+import (
+	"leetcode-golang/commons"
+)
 
 /**
  * Definition for a binary tree node.

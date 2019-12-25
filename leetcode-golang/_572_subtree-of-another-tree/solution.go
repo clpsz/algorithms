@@ -1,6 +1,8 @@
 package _572_subtree_of_another_tree
 
-import "leetcode-golang/commons"
+import (
+	"leetcode-golang/commons"
+)
 
 /**
  * Definition for a binary tree node.

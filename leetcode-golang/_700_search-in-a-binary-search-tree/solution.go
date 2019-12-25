@@ -1,6 +1,8 @@
 package _700_search_in_a_binary_search_tree
 
-import "leetcode-golang/commons"
+import (
+	"leetcode-golang/commons"
+)
 
 /**
  * Definition for a binary tree node.
