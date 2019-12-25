@@ -1,13 +1,13 @@
 package _938_range_sum_of_bst
 
 import (
-	"leetcode-golang/commons"
+	. "leetcode-golang/commons"
 )
 
 
-func rangeSumBST(root *commons.TreeNode, L int, R int) int {
-	var helper func (root1 *commons.TreeNode) int
-	helper = func(root1 *commons.TreeNode) int {
+func rangeSumBST(root *TreeNode, L int, R int) int {
+	var helper func (root1 *TreeNode) int
+	helper = func(root1 *TreeNode) int {
 		if root1 == nil { return 0}
 		sum := 0
 		if root1.Val >= L && root1.Val <= R {

@@ -1,7 +1,7 @@
 package _572_subtree_of_another_tree
 
 import (
-	"leetcode-golang/commons"
+	. "leetcode-golang/commons"
 )
 
 /**
@@ -12,9 +12,9 @@ import (
  *     Right *TreeNode
  * }
  */
-func isSubtree(s *commons.TreeNode, t *commons.TreeNode) bool {
-	var isIdentical func (s *commons.TreeNode, t *commons.TreeNode) bool
-	isIdentical = func (s *commons.TreeNode, t *commons.TreeNode) bool {
+func isSubtree(s *TreeNode, t *TreeNode) bool {
+	var isIdentical func (s *TreeNode, t *TreeNode) bool
+	isIdentical = func (s *TreeNode, t *TreeNode) bool {
 		if s == nil {
 			return t == nil
 		}

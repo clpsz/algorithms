@@ -1,7 +1,7 @@
 package _108_convert_sorted_array_to_binary_search_tree
 
 import (
-	"leetcode-golang/commons"
+	. "leetcode-golang/commons"
 )
 
 /**
@@ -12,12 +12,12 @@ import (
  *     Right *TreeNode
  * }
  */
-func sortedArrayToBST(nums []int) *commons.TreeNode {
+func sortedArrayToBST(nums []int) *TreeNode {
 	if len(nums) == 0 {
 		return nil
 	}
 	mid := len(nums) / 2
-	res := commons.TreeNode{Val: nums[mid]}
+	res := TreeNode{Val: nums[mid]}
 	res.Left = sortedArrayToBST(nums[:mid])
 	res.Right = sortedArrayToBST(nums[mid+1:])
 

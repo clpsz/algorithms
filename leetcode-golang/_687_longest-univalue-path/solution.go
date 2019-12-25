@@ -1,7 +1,7 @@
 package _687_longest_univalue_path
 
 import (
-	"leetcode-golang/commons"
+	. "leetcode-golang/commons"
 )
 
 /**
@@ -12,10 +12,10 @@ import (
  *     Right *TreeNode
  * }
  */
-func longestUnivaluePath(root *commons.TreeNode) int {
+func longestUnivaluePath(root *TreeNode) int {
 	curMax := 0
-	var helper func (root1 *commons.TreeNode) int
-	helper = func (root1 *commons.TreeNode) int {
+	var helper func (root1 *TreeNode) int
+	helper = func (root1 *TreeNode) int {
 		if root1 == nil {
 			return 0
 		}

@@ -1,7 +1,7 @@
 package _98_validate_binary_search_tree
 
 import (
-	"leetcode-golang/commons"
+	. . "leetcode-golang/commons"
 )
 
 /**
@@ -12,10 +12,10 @@ import (
  *     Right *TreeNode
  * }
  */
-func isValidBST(root *commons.TreeNode) bool {
+func isValidBST(root *TreeNode) bool {
 	nodes := make([]int, 0)
-	var helper func (root1 *commons.TreeNode)
-	helper = func (root1 *commons.TreeNode) {
+	var helper func (root1 *TreeNode)
+	helper = func (root1 *TreeNode) {
 		if root1 == nil {
 			return
 		}

@@ -1,23 +1,23 @@
 package _102_binary_tree_level_order_traversal
 
 import (
-	"leetcode-golang/commons"
+	. "leetcode-golang/commons"
 )
 
-func levelOrderUseQueue(root *commons.TreeNode) [][]int {
+func levelOrderUseQueue(root *TreeNode) [][]int {
 	if root == nil {
 		return make([][]int, 0)
 	}
 
 	var result = make([][]int, 0)
-	var curLevel = []*commons.TreeNode{root}
+	var curLevel = []*TreeNode{root}
 
 	for {
 		if len(curLevel) == 0 {
 			break
 		}
 		var levelResult = make([]int, 0)
-		var nextLevel = make([]*commons.TreeNode, 0)
+		var nextLevel = make([]*TreeNode, 0)
 		for _, node := range curLevel {
 			levelResult = append(levelResult, node.Val)
 			if node.Left != nil {
@@ -35,9 +35,9 @@ func levelOrderUseQueue(root *commons.TreeNode) [][]int {
 }
 
 
-func levelOrderUseRecursive(root *commons.TreeNode) [][]int {
-	var helper func (root *commons.TreeNode, res [][]int, level int) [][]int
-	helper = func (root *commons.TreeNode, res [][]int, level int) [][]int{
+func levelOrderUseRecursive(root *TreeNode) [][]int {
+	var helper func (root *TreeNode, res [][]int, level int) [][]int
+	helper = func (root *TreeNode, res [][]int, level int) [][]int{
 		if root == nil {
 			return res
 		}

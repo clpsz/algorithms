@@ -1,7 +1,7 @@
 package _404_sum_of_left_leaves
 
 import (
-	"leetcode-golang/commons"
+	. "leetcode-golang/commons"
 )
 
 /**
@@ -12,9 +12,9 @@ import (
  *     Right *TreeNode
  * }
  */
-func sumOfLeftLeaves(root *commons.TreeNode) int {
-	var helper func (root *commons.TreeNode, isLeft bool) int
-	helper = func (root *commons.TreeNode, isLeft bool) int {
+func sumOfLeftLeaves(root *TreeNode) int {
+	var helper func (root *TreeNode, isLeft bool) int
+	helper = func (root *TreeNode, isLeft bool) int {
 		if root == nil {
 			return 0
 		}

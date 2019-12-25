@@ -1,7 +1,7 @@
 package _700_search_in_a_binary_search_tree
 
 import (
-	"leetcode-golang/commons"
+	. "leetcode-golang/commons"
 )
 
 /**
@@ -12,7 +12,7 @@ import (
  *     Right *TreeNode
  * }
  */
-func searchBST(root *commons.TreeNode, val int) *commons.TreeNode {
+func searchBST(root *TreeNode, val int) *TreeNode {
 	if root == nil {
 		return nil
 	}
