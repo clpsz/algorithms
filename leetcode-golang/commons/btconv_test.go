@@ -1,7 +1,6 @@
-package _297_serialize_and_deserialize_binary_tree
+package commons
 
 import (
-	. "leetcode-golang/commons"
 	"testing"
 )
 
